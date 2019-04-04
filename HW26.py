@@ -103,8 +103,32 @@
     #sys.exit(app.exec_())
 
 ## toolbar
+#import sys
+#from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication
+#from PyQt5.QtGui import QIcon
+
+#class Example(QMainWindow):
+    #def __init__(self):
+        #super().__init__()
+        #self.initUI()
+    #def initUI(self):
+        #exitAct=QAction(QIcon('exit.png'),'Exit',self)
+        #exitAct.setShortcut('Ctrl+Q')
+        #exitAct.triggered.connect(qApp.quit)
+        ##
+        #self.toolbar=self.addToolBar('Exit')
+        #self.toolbar.addAction(exitAct)
+#
+        #self.setGeometry(300,300,400,200)
+        #self.setWindowTitle('Toolbar')
+        #self.show()
+#app = QApplication(sys.argv)
+#ex=Example()
+#sys.exit(app.exec_())
+
+## Put it together 
 import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication
+from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
 from PyQt5.QtGui import QIcon
 
 class Example(QMainWindow):
@@ -112,32 +136,8 @@ class Example(QMainWindow):
         super().__init__()
         self.initUI()
     def initUI(self):
-        exitAct=QAction(QIcon('exit.png'),'Exit',self)
-        exitAct.setShortcut('Ctrl+Q')
-        exitAct.triggered.connect(qApp.quit)
-        
-        self.toolbar=self.addToolBar('Exit')
-        self.toolbar.addAction(exitAct)
-
-        self.setGeometry(300,300,400,200)
-        self.setWindowTitle('Toolbar')
-        self.show()
-app = QApplication(sys.argv)
-ex=Example()
-sys.exit(app.exec_())
-
-## Put it together 
-import sys
-from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
-from PyQqt5.QtGui import QIcon
-
-class Example(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-    def initUI(self):
         textEdit=QTextEdit()
-        self.setCenteralWidget(textEdit)
+        self.setCentralWidget(textEdit)
 
         exitAct=QAction(QIcon('exit.png'),'Exit',self)
         exitAct.setShortcut('Ctrl+Q')
@@ -159,7 +159,6 @@ class Example(QMainWindow):
 app = QApplication(sys.argv)
 ex = Example()
 sys.exit(app.exec_())
-
 
 
 
